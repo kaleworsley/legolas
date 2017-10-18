@@ -1,0 +1,22 @@
+{
+    "memo": "a7e7178886da50a4d4527e5ff1769b0ded63251a8185e7cafe5c9b36bf215721",
+    "projects": [
+        {
+            "name": "github.com/go-chi/chi",
+            "branch": "master",
+            "revision": "8dfd99e5cd5a43ce0fd1f00c8840942d7c32a743",
+            "packages": [
+                ".",
+                "middleware"
+            ]
+        },
+        {
+            "name": "github.com/jamiealquiza/envy",
+            "version": "v1.0.0",
+            "revision": "0bbd0e6a316f4aedb2fcb3eaaabd3e89d88d606f",
+            "packages": [
+                "."
+            ]
+        }
+    ]
+}

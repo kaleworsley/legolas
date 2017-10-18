@@ -2,6 +2,10 @@
 
 [Legolas](https://github.com/kaleworsley/legolas) is an example of how to structure a web application written in [go](https://golang.org/).
 
+## Dependencies
+
+Go dependencies are managed with [dep](https://github.com/golang/dep).
+
 ## Usage
 
 ```
