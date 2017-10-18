@@ -38,6 +38,7 @@ func main() {
 
 	server := &legolas.Server{
 		Render: render,
+		Logger: logger,
 	}
 	router := chi.NewRouter()
 
