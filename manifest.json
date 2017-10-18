@@ -1,0 +1,10 @@
+{
+    "dependencies": {
+        "github.com/go-chi/chi": {
+            "branch": "master"
+        },
+        "github.com/jamiealquiza/envy": {
+            "branch": "master"
+        }
+    }
+}
