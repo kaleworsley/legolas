@@ -1,5 +1,5 @@
 {
-    "memo": "a7e7178886da50a4d4527e5ff1769b0ded63251a8185e7cafe5c9b36bf215721",
+    "memo": "c0e9fac2200b69524efbf657e8eada6b09dd4a5132a9728cc2451f96b0d74180",
     "projects": [
         {
             "name": "github.com/go-chi/chi",
@@ -14,6 +14,14 @@
             "name": "github.com/jamiealquiza/envy",
             "version": "v1.0.0",
             "revision": "0bbd0e6a316f4aedb2fcb3eaaabd3e89d88d606f",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/unrolled/render",
+            "branch": "master",
+            "revision": "32bf1ea2a39e4e796d9040b5cf235258cee978c1",
             "packages": [
                 "."
             ]
