@@ -1,5 +1,7 @@
 package legolas
 
+//go:generate go-bindata -pkg templates -ignore templates/templates\.go -o templates/templates.go templates/...
+
 import (
 	"io"
 	"log"
