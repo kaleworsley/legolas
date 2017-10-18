@@ -14,6 +14,8 @@ Usage of legolas:
     	http host [LEGOLAS_HOST] (default "127.0.0.1")
   -port string
     	http port [LEGOLAS_PORT] (default "8080")
+  -templates string
+    	path to templates directory [LEGOLAS_TEMPLATES]
 ```
 
 ## License

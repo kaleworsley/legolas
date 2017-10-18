@@ -5,6 +5,9 @@
         },
         "github.com/jamiealquiza/envy": {
             "branch": "master"
+        },
+        "github.com/unrolled/render": {
+            "branch": "master"
         }
     }
 }
