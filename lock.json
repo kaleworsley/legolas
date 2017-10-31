@@ -1,6 +1,14 @@
 {
-    "memo": "c0e9fac2200b69524efbf657e8eada6b09dd4a5132a9728cc2451f96b0d74180",
+    "memo": "69459f34cd643f2e1ad2aaf4260c78a6d287fe0114f64ec8ad2906a29f313a77",
     "projects": [
+        {
+            "name": "github.com/elazarl/go-bindata-assetfs",
+            "branch": "master",
+            "revision": "30f82fa23fd844bd5bb1e5f216db87fd77b5eb43",
+            "packages": [
+                "."
+            ]
+        },
         {
             "name": "github.com/go-chi/chi",
             "branch": "master",

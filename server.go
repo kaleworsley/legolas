@@ -1,5 +1,7 @@
 package legolas
 
+//go:generate yarn run webpack
+//go:generate go-bindata -pkg assets -ignore assets/assets\.go -o assets/assets.go public/...
 //go:generate go-bindata -pkg templates -ignore templates/templates\.go -o templates/templates.go templates/...
 
 import (

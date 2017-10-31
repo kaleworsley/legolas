@@ -8,10 +8,12 @@ import (
 	"os"
 	"time"
 
+	assetfs "github.com/elazarl/go-bindata-assetfs"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/jamiealquiza/envy"
 	"github.com/kaleworsley/legolas"
+	"github.com/kaleworsley/legolas/assets"
 	"github.com/kaleworsley/legolas/templates"
 	"github.com/unrolled/render"
 )
@@ -20,6 +22,7 @@ var config struct {
 	Port            string
 	Host            string
 	Templates       string
+	Public          string
 	DevelopmentMode bool
 }
 
@@ -27,6 +30,7 @@ func main() {
 	flag.StringVar(&(config.Port), "port", "8080", "http port")
 	flag.StringVar(&(config.Host), "host", "127.0.0.1", "http host")
 	flag.StringVar(&(config.Templates), "templates", "", "path to templates directory")
+	flag.StringVar(&(config.Public), "public", "", "path to public directory")
 	envy.Parse("LEGOLAS")
 	flag.Parse()
 
@@ -61,6 +65,19 @@ func main() {
 	router.Use(middleware.Recoverer)
 	router.Use(middleware.Timeout(60 * time.Second))
 	router.Get("/", server.IndexRoute)
+
+	if config.Public == "" {
+		router.NotFound(http.FileServer(
+			&assetfs.AssetFS{
+				Asset:     assets.Asset,
+				AssetDir:  assets.AssetDir,
+				AssetInfo: assets.AssetInfo,
+				Prefix:    "public",
+			},
+		).ServeHTTP)
+	} else {
+		router.NotFound(http.FileServer(http.Dir(config.Public)).ServeHTTP)
+	}
 
 	svr := http.Server{
 		Addr:    net.JoinHostPort(config.Host, config.Port),
