@@ -7,7 +7,7 @@
 [go-bindata](https://github.com/jteeuwen/go-bindata) is required to embed the
 templates in the binary.
 
-Go dependencies are managed with [dep](https://github.com/golang/dep).
+Go dependencies are managed with [Modules](https://github.com/golang/go/wiki/Modules).
 
 Frontend dependencies are managed with [yarn](https://yarnpkg.com/).
 
