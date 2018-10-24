@@ -34,6 +34,6 @@ Usage of legolas:
 
 ## License
 
-Copyright 2017, Kale Worsley.
+Copyright 2017 - 2018, Kale Worsley.
 
 Legolas is made available under the MIT License. See [LICENSE](LICENSE) for details.
