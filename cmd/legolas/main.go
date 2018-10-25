@@ -64,7 +64,8 @@ func main() {
 	router.Use(middleware.RequestLogger(&middleware.DefaultLogFormatter{Logger: logger}))
 	router.Use(middleware.Recoverer)
 	router.Use(middleware.Timeout(60 * time.Second))
-	router.Get("/", server.IndexRoute)
+
+	server.Setup(router)
 
 	if config.Public == "" {
 		router.NotFound(http.FileServer(
@@ -81,7 +82,7 @@ func main() {
 
 	svr := http.Server{
 		Addr:    net.JoinHostPort(config.Host, config.Port),
-		Handler: router,
+		Handler: server,
 	}
 
 	logger.Printf("Starting server on %v:%v...\n", config.Host, config.Port)

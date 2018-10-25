@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/go-chi/chi"
 	"github.com/unrolled/render"
 )
 
@@ -16,6 +17,16 @@ import (
 type Server struct {
 	Render *render.Render
 	Logger *log.Logger
+	router *chi.Mux
+}
+
+func (s *Server) Setup(router *chi.Mux) {
+	s.router = router
+	s.router.Get("/", s.IndexRoute)
+}
+
+func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	s.router.ServeHTTP(w, r)
 }
 
 func (s *Server) renderHTML(w io.Writer, status int, name string, binding interface{}, htmlOpt ...render.HTMLOptions) {
